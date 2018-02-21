@@ -78,30 +78,27 @@ class Stopwatch extends React.Component {
 
     getFormattedTime() {
         const { minutes, seconds, miliseconds } = this.state.times;
-        return `${pad0(minutes)}:${pad0(seconds)}:${pad0(Math.floor(miliseconds))}`;
+        return `${pad0(minutes)}:${pad0(seconds)}:${pad0(
+            Math.floor(miliseconds)
+        )}`;
     }
 
     render() {
-        return ( <
-            div >
-            <
-            nav >
-            <
-            button className = "button"
-            onClick = { this.start.bind(this) } >
-            Start <
-            /button> <
-            button className = "button"
-            onClick = { this.stop.bind(this) } >
-            Stop <
-            /button> <
-            /nav> <
-            div className = "stopwatch" > { this.getFormattedTime() } < /div> <
-            ul className = "results" / >
-            <
-            /div>
+        return (
+            <div>
+                <nav>
+                    <button className="button" onClick={this.start.bind(this)}>
+                        Start{" "}
+                    </button>{" "}
+                    <button className="button" onClick={this.stop.bind(this)}>
+                        Stop{" "}
+                    </button>{" "}
+                </nav>{" "}
+                <div className="stopwatch"> {this.getFormattedTime()} </div>{" "}
+                <ul className="results" />
+            </div>
         );
     }
 }
 
-ReactDOM.render( < Stopwatch / > , document.getElementById("app"));
+ReactDOM.render(<Stopwatch />, document.getElementById("app"));
